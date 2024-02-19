@@ -4,13 +4,16 @@
     <navbar-header></navbar-header>
     <router-view></router-view>
   </div>
+  <carousel></carousel>
 </template>
 <script>
 import NavbarHeader from './components/header/NavbarHeader.vue'
+import Carousel from './components/widgets/Carousel.vue'
 
 export default {
   components: {
-    NavbarHeader
+    NavbarHeader,
+    Carousel
   }
 }
 </script>
