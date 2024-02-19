@@ -5,6 +5,9 @@
         </div>
         <font-awesome-icon :icon="['fas', 'chevron-left']"  @click="pageDown" class="absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-3xl rounded-full p-2 text-white cursor-pointer"/>
         <font-awesome-icon :icon="['fas', 'chevron-right']" @click="pageUp" class="absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-3xl rounded-full p-2 text-white cursor-pointer"/>
+        <div class="flex justify-center mt-3">
+            <font-awesome-icon :icon="currentIndex === index ? 'fa-solid fa-circle' : 'fa-regular fa-circle'" class="mx-2 w-3 h-3 text-slate-50" v-for="(slide, index) of slides" :key="index"/>
+        </div>
     </div>
 </template>
 <script>
