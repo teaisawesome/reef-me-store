@@ -27,6 +27,8 @@ export default {
       'carousel-text-title': '5rem'
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-animated')
+  ],
 }
 
