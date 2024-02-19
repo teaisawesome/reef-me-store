@@ -23,7 +23,8 @@ export default {
     fontSize: {
       'not-found': '3rem',
       '3xl': '2rem',
-      '1/5xl': '1.5rem'
+      '1/5xl': '1.5rem',
+      'carousel-text-title': '5rem'
     },
   },
   plugins: [],

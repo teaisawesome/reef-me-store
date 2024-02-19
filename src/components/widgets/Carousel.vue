@@ -1,7 +1,8 @@
 <template>
     <div class="max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative bg-purple-400">
         <div :style="{'background-image': `url(${slides[currentIndex]})`}" 
-            class="w-full h-full rounded-2xl bg-center bg-cover duration-500">
+            class="w-full h-full rounded-2xl bg-center bg-cover duration-500 flex justify-center items-center">
+            <h1 class="text-white text-carousel-text-title">Title</h1>
         </div>
         <font-awesome-icon :icon="['fas', 'chevron-left']"  @click="pageDown" class="absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-3xl rounded-full p-2 text-white cursor-pointer"/>
         <font-awesome-icon :icon="['fas', 'chevron-right']" @click="pageUp" class="absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-3xl rounded-full p-2 text-white cursor-pointer"/>
