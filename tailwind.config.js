@@ -24,7 +24,9 @@ export default {
       'not-found': '3rem',
       '3xl': '2rem',
       '1/5xl': '1.5rem',
-      'carousel-text-title': '5rem'
+      'crs-text-title': '5rem',
+      'sm-crs-title': '3rem',
+      'sm-crs-subtext': '2rem'
     },
   },
   plugins: [
