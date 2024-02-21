@@ -2,7 +2,6 @@
     <div>
         <Carousel title-color="text-slate-50" :slide-data="carouselData"/>
     </div>
-    <h3>ASD</h3>
 </template>
 <script>
 import Carousel from '../components/widgets/Carousel.vue'
