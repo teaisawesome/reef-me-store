@@ -37,7 +37,7 @@ export default {
     },
     actions: {
         async login(context, payload) {
-            context.dispatch('auth', {
+            return context.dispatch('auth', {
                 ...payload,
                 mode: 'login'
             })
@@ -63,12 +63,12 @@ export default {
                         returnSecureToken: true
                     })
                 })
-
-                const {localId, email, idToken, expiresIn} = await response.json()
+                
+                const {localId, email, idToken, expiresIn, error} = await response.json()
                 const expirationDate = new Date().getTime() + expiresIn;
 
                 if(!response.ok) {
-                    console.log("Failed to authenticate! Try again!")
+                    throw new Error(`${error.message} Failed to authenticate!`)
                 }
 
                 /* state-ek beállítása */

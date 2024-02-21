@@ -2,6 +2,7 @@
     <div class="flex justify-center">
     <div class="flex flex-col md:flex-row justify-center shadow-xl shadow-slate-800 my-5 rounded-xl">
         <div class="grow bg-sky-50 rounded-l-xl p-8">
+            <h2 v-if="message" :class="message.style" class="rounded-md p-3 mb-5 shadow-md text-slate-50">{{ message.text }}</h2>
             <h1 class="text-3xl mb-10">Login</h1>
             <form @submit.prevent="submitForm">
                 <div class="mb-5">
@@ -33,26 +34,38 @@ export default {
             email: '',
             password: '',
             errors: {},
+            message: null,
             formIsValid: true
         }
     },
     methods: {
         submitForm: async function() {
+            this.message = null
             this.fieldValidation()
             
             if(!this.formIsValid) {
                 return
             }
 
-            this.$store.dispatch("login", {
-                email: this.email,
-                password: this.password,
-                returnSecureToken: true
-            })
+            try {
+                await this.$store.dispatch("login", {
+                    email: this.email,
+                    password: this.password,
+                    returnSecureToken: true
+                })
 
-            console.log('admin', this.$store.getters.getAdmin)
+                this.message = {
+                    text: 'Successful login',
+                    style: 'bg-green-600'
+                }
 
-            console.log("SUBMIT!")
+                this.$router.push('/')
+            } catch(err) {
+                this.message = {
+                    text: 'Login failed',
+                    style: 'bg-red-600'
+                }
+            }
         },
         fieldValidation: function() {
             this.errors = {}

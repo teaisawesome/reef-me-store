@@ -51,7 +51,7 @@ export default {
             this.message = null
             this.validateForm()
 
-            if(!formIsValid) {
+            if(!this.formIsValid) {
                 return
             }
 
