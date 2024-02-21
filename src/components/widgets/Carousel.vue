@@ -1,5 +1,5 @@
 <template>
-    <div v-show="isVisible" class="custom-carousel max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative bg-purple-400">
+    <div v-show="isVisible" class="custom-carousel max-w-[1400px] h-[780px] w-full m-auto px-4 relative">
         <div :style="{'background-image': `url(${slideData[currentIndex].url})`}"
             :class="{'animate-fade': animateOnChange}"
             class="w-full h-full rounded-2xl bg-center bg-cover duration-1000 flex flex-col justify-center items-center">
@@ -12,7 +12,6 @@
             <font-awesome-icon :icon="currentIndex === index ? 'fa-solid fa-circle' : 'fa-regular fa-circle'" class="mx-2 w-3 h-3 text-slate-50" v-for="(slide, index) of slideData" :key="index"/>
         </div>
     </div>
-    <h1>ASDSDASD</h1>
 </template>
 <script>
 export default {
@@ -52,7 +51,7 @@ export default {
                 'https://images.pexels.com/photos/3113229/pexels-photo-3113229.jpeg'
             ],
             currentIndex: 0,
-            isVisible: false,
+            isVisible: true,
             animateOnChange: false,
             titleAnimation: {
                 duration: 1500,

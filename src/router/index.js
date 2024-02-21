@@ -1,15 +1,17 @@
 import { createRouter, createWebHistory} from 'vue-router'
-import HelloWorld from '../components/HelloWorld.vue'
+
+import HomeView from '../views/HomeView.vue'
 import NotFound from '../components/pages/NotFound.vue'
 import LoginAuth from '../components/auth/LoginAuth.vue'
 import RegistrationAuth from '../components/auth/RegistrationAuth.vue'
+
 import store from '../store/index.js'
 
 const routes = [
     {
         path: '/',
         name: 'root',
-        component: HelloWorld,
+        component: HomeView,
         meta: { requiresAuth: true }
     },
     {
