@@ -1,14 +1,17 @@
 <template>
     <div>
         <Carousel title-color="text-slate-50" :slide-data="carouselData"/>
+        <info-section></info-section>
     </div>
 </template>
 <script>
 import Carousel from '../components/widgets/Carousel.vue'
+import InfoSection from '../components/widgets/InfoSection.vue'
 
 export default {
     components: {
-        Carousel
+        Carousel,
+        InfoSection
     },
     data() {
         return {
@@ -19,11 +22,11 @@ export default {
                     subText: 'A bohóchalak testhossza fajonként eltérő, és 4,8-17 centiméter között változik.'
                 },
                 {
-                    url: 'https://images.pexels.com/photos/3113229/pexels-photo-3113229.jpeg',
-                    title: 'Kőhal'
+                    url: 'https://images.pexels.com/photos/2577659/pexels-photo-2577659.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                    title: 'Csipeszhal'
                 }, 
                 {
-                    url: 'https://images.pexels.com/photos/3204595/pexels-photo-3204595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                    url: 'https://images.pexels.com/photos/262416/pexels-photo-262416.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                     title: 'Magnificient Coral',
                     subText: 'What Exactly Is Coral?'
                 }

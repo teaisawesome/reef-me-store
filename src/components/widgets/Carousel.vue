@@ -1,8 +1,8 @@
 <template>
-    <div v-show="isVisible" class="custom-carousel h-[720px] w-full m-auto px-4 relative">
+    <div v-show="isVisible" class="custom-carousel min-h-[720px] w-full m-auto px-4 relative">
         <div :style="{'background-image': `url(${slideData[currentIndex].url})`}"
             :class="{'animate-fade': animateOnChange}"
-            class="w-full h-full rounded-2xl bg-center bg-cover duration-1000 flex flex-col justify-center items-center">
+            class="w-full min-h-[720px] rounded-2xl bg-center bg-cover duration-1000 flex flex-col justify-center items-center">
             <h1 :class="[titleColor, {'animate-fade-left animate-once animate-duration-[1500ms] animate-delay-500': animateOnChange}]" class=" text-sm-crs-title md:crs-title mb-5">{{ slideData[currentIndex].title }}</h1>
             <p :class="[subTextColor, {'animate-fade-left animate-once animate-duration-[1500ms] animate-delay-1000': animateOnChange}]" class="text-sm-crs-subtext w-2/3 md:w-3/6 md:text-3xl text-center">{{ slideData[currentIndex].subText }}</p>
         </div>
@@ -47,7 +47,7 @@ export default {
         return {
             slides: [
                 'https://images.pexels.com/photos/1125979/pexels-photo-1125979.jpeg',
-                'https://images.pexels.com/photos/3561924/pexels-photo-3561924.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                'https://images.pexels.com/photos/2577659/pexels-photo-2577659.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                 'https://images.pexels.com/photos/3113229/pexels-photo-3113229.jpeg'
             ],
             currentIndex: 0,
